@@ -1,0 +1,45 @@
+Usage:
+  require [options] [--] [<packages>]...
+
+Arguments:
+  packages                            Optional package name can also include a version constraint, e.g. foo/bar or foo/bar:1.0.0 or foo/bar=1.0.0 or "foo/bar 1.0.0"
+
+Options:
+      --dev                           Add requirement to require-dev.
+      --prefer-source                 Forces installation from package sources when possible, including VCS information.
+      --prefer-dist                   Forces installation from package dist even for dev versions.
+      --no-progress                   Do not output download progress.
+      --no-suggest                    Do not show package suggestions.
+      --no-update                     Disables the automatic update of the dependencies.
+      --no-scripts                    Skips the execution of all scripts defined in composer.json file.
+      --update-no-dev                 Run the dependency update with the --no-dev option.
+      --update-with-dependencies      Allows inherited dependencies to be updated, except those that are root requirements.
+      --update-with-all-dependencies  Allows all inherited dependencies to be updated, including those that are root requirements.
+      --ignore-platform-reqs          Ignore platform requirements (php & ext- packages).
+      --prefer-stable                 Prefer stable versions of dependencies.
+      --prefer-lowest                 Prefer lowest versions of dependencies.
+      --sort-packages                 Sorts packages when adding/updating a new dependency
+  -o, --optimize-autoloader           Optimize autoloader during autoloader dump
+  -a, --classmap-authoritative        Autoload classes from the classmap only. Implicitly enables `--optimize-autoloader`.
+      --apcu-autoloader               Use APCu to cache found/not-found classes.
+  -h, --help                          Display this help message
+  -q, --quiet                         Do not output any message
+  -V, --version                       Display this application version
+      --ansi                          Force ANSI output
+      --no-ansi                       Disable ANSI output
+  -n, --no-interaction                Do not ask any interactive question
+      --profile                       Display timing and memory usage information
+      --no-plugins                    Whether to disable plugins.
+  -d, --working-dir=WORKING-DIR       If specified, use the given directory as working directory.
+  -v|vv|vvv, --verbose                Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Help:
+  The require command adds required packages to your composer.json and installs them.
+  
+  If you do not specify a package, composer will prompt you to search for a package, and given results, provide a list of
+  matches to require.
+  
+  If you do not specify a version constraint, composer will choose a suitable one based on the available package versions.
+  
+  If you do not want to install the new dependencies immediately you can call it with --no-update
+  
